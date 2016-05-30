@@ -43,3 +43,99 @@ header nav ul li a{
 	text-decoration: none;
 	padding: 20px;
 }
+
+header nav ul li:hover .children{
+	display: block;
+}
+
+/*hide the submenu. I want them to display with hover
+  absolute position, Father is relative
+*/
+header nav ul li .children{
+	display: none;
+	background-color: #011826;
+	position: absolute;
+	width: 150%;
+	z-index: 1000;
+}
+
+header nav ul li .children li{
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+	
+}
+
+/*to cover the 100% of the size*/
+header nav ul li .children li a{
+	display: block;		
+}
+
+.x{
+	background-color: red;
+}
+.y{
+	background-color: yellow;
+}
+.z{
+	background-color: blue;
+}
+
+@media screen and (max-width: 800px){
+	body{
+		padding-top: 80px;
+	}
+
+	.menu_bar{
+		display: block; /*display block after display none*/
+		background-color: #E6344A;
+		width: 100%;
+		position: fixed;
+		top:0;
+	}
+
+	.menu_bar .bt-menu{
+       display: block;
+       padding: 20px;
+       color: white;
+       overflow: hidden;
+       font-size: 25px;
+       font-weight: bold;
+       text-decoration: none;  
+	}
+
+	header nav{
+		position: fixed;
+		right: 100%;
+		width: 80%;
+		margin: 0;
+		overflow: scroll;
+		height: calc(100% - 70px);
+	}
+
+	header nav ul li{
+		display: block;
+		border-bottom: 1px solid rgba(255,255,255,.5) ;
+	}
+
+	header nav ul li a{
+		display: block;
+	}
+    
+    /*do not show the submenu in hover*/
+    header nav ul li:hover .children{
+		display: none;
+	}
+
+	header nav ul li .children{
+		width: 100%;
+		position: relative;
+	}
+
+    /* give some margin in the submenu to the right*/
+	header nav ul li .children li a{
+		margin-left: 20px;
+	}
+
+
+}
